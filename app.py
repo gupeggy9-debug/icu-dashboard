@@ -1209,7 +1209,10 @@ def api_store_ppt(store_name):
     )
 
 
-@app.route("/health")
+@app.route("/hc")
+@app.route("/")
+def health():
+    return "ok"
 def health():
     return "OK"
 
