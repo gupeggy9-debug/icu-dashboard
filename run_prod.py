@@ -1,7 +1,11 @@
-"""ICU\u9910\u5385\u4f1a\u5458\u770b\u677f \u2014 \u751f\u4ea7\u73af\u5883\u542f\u52a8\u811a\u672c."""
+#!/usr/bin/env python
+"""ICU Restaurant Dashboard - Production WSGI launcher."""
 import os
-from app import app
+import sys
+import subprocess
 
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port, debug=False)
+port = os.environ.get("PORT", "5000")
+bind = f"0.0.0.0:{port}"
+cmd = ["gunicorn", "app:app", "--bind", bind, "--workers", "2", "--timeout", "120"]
+print(f"Starting: {cmd}", flush=True)
+os.execvp("gunicorn", cmd)
