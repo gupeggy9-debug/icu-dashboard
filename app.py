@@ -1209,6 +1209,10 @@ def api_store_ppt(store_name):
     )
 
 
+@app.route("/health")
+def health():
+    return "OK"
+
 if __name__ == "__main__":
     print("=" * 50)
     print("ICU餐厅会员看板")
