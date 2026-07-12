@@ -1,1 +1,1 @@
-web: python run_prod.py
+web: gunicorn app:app --log-level debug
