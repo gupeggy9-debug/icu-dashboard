@@ -1,6 +1,6 @@
-flask==3.1.0
-bcrypt==4.2.1
-pandas==2.2.3
-openpyxl==3.1.5
-waitress==3.0.2
-python-pptx==1.0.2
+flask>=3.0
+bcrypt>=4.0
+pandas>=2.0
+openpyxl>=3.0
+waitress>=3.0
+python-pptx>=1.0
