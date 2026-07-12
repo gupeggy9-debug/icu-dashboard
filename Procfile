@@ -1,1 +1,1 @@
-web: python run_prod.py
+web: gunicorn app:app --bind 0.0.0.0:
